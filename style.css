@@ -64,6 +64,9 @@ body {
   align-items: center;
   margin-right: 30px;
 }
+.navbar__s4 {
+  display: none;
+}
 /* My Learning Popup */
 .my_learning {
   position: relative;
@@ -102,19 +105,17 @@ body {
   border: 3px solid blueviolet;
   border-top: none;
   color: white;
-  padding: 10px 30px;
+  width: 10%;
+  padding: 10px 20px;
   border-radius: 0px 0px 20px 20px;
   box-shadow:
     rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  text-align: center;
 }
 
-/* .categories__s:hover {
-  transform: scale(1.1);
-  border: 1px solid rgb(71, 15, 124);
-} */
 .categories__s:hover {
   background-color: transparent;
   border: 3px solid blueviolet;
@@ -179,8 +180,8 @@ h1 {
 }
 
 .recommended__container__card {
-  width: 300px;
-  height: 350px;
+  width: 20%;
+  height: auto;
   border: 1px solid rgb(210, 207, 207);
   border-radius: 15px;
   padding: 10px;
@@ -190,6 +191,8 @@ h1 {
   justify-content: space-around;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: transform 0.2s ease;
+  flex-grow: 1;
+  flex-basis: 20%;
 }
 
 .recommended__container__card:hover {
@@ -275,10 +278,11 @@ h1 {
 
 .topic__container p {
   border: 1px solid blueviolet;
-  padding: 10px;
+  padding: 2% 0px;
   border-radius: 15px;
-  flex-basis: 15%;
+  flex-basis: 20%;
   flex-grow: 1;
+  text-align: center;
 }
 
 .footer {
@@ -329,5 +333,42 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: 10%;
-  /* background-color: rgb(84, 83, 82); */
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 10px;
+  }
+  .r3 {
+    display: none;
+  }
+  .categories__box,
+  .categories {
+    display: none;
+  }
+  .navbar__s2,
+  .navbar__s3 {
+    display: none;
+  }
+  .navbar__s4 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recommended__container__card {
+    flex-basis: 40%;
+  }
+  .recommended__container {
+    flex-basis: 40%;
+  }
+  .topic__container p {
+    /* padding: 2% 0px; */
+    /* border-radius: 15px; */
+    flex-basis: 30%;
+  }
+  .my_learning_popup {
+    font-size: 10px;
+  }
 }
